@@ -18,6 +18,8 @@ class AddressBookPage;
 class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class RPCConsole;
+class BlockBrowser;
+class ChatWindow;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -57,7 +59,8 @@ private:
     BitcoinGUI *gui;
     ClientModel *clientModel;
     WalletModel *walletModel;
-
+	BlockBrowser *blockBrowser;
+	ChatWindow *chatWindow;
     OverviewPage *overviewPage;
     QWidget *transactionsPage;
     AddressBookPage *addressBookPage;
@@ -83,7 +86,8 @@ public slots:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
-
+	void gotoBlockBrowser();
+	void gotoChatWindow();
     /** Show incoming transaction notification for new transactions.
 
         The new items are those between start and end inclusive, under the given parent item.

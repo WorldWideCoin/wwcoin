@@ -18,6 +18,8 @@ class SendCoinsDialog;
 class SignVerifyMessageDialog;
 class Notificator;
 class RPCConsole;
+class BlockBrowser;
+class ChatWindow;
 
 class CWallet;
 
@@ -67,6 +69,8 @@ public:
     QAction * getAddressBookAction() { return addressBookAction; }
     QAction * getReceiveCoinsAction() { return receiveCoinsAction; }
     QAction * getSendCoinsAction() { return sendCoinsAction; }
+	QAction * getBlockAction() { return blockAction; }
+	QAction * getChatAction() { return chatAction; }
 
 protected:
     void changeEvent(QEvent *e);
@@ -102,7 +106,9 @@ private:
     QAction *changePassphraseAction;
     QAction *aboutQtAction;
     QAction *openRPCConsoleAction;
-
+	QAction *chatAction;
+    QAction *blockAction;
+	
     QSystemTrayIcon *trayIcon;
     Notificator *notificator;
     TransactionView *transactionView;
@@ -176,7 +182,8 @@ private slots:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
-
+	void gotoChatWindow();
+    void gotoBlockBrowser();
     /** Show configuration dialog */
     void optionsClicked();
     /** Show about dialog */

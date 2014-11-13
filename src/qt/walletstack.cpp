@@ -117,6 +117,19 @@ void WalletStack::gotoVerifyMessageTab(QString addr)
     if (walletView) walletView->gotoVerifyMessageTab(addr);
 }
 
+void WalletStack::gotoBlockBrowser()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoBlockBrowser();
+}
+void WalletStack::gotoChatWindow()
+{
+    QMap<QString, WalletView*>::const_iterator i;
+    for (i = mapWalletViews.constBegin(); i != mapWalletViews.constEnd(); ++i)
+        i.value()->gotoChatWindow();
+}
+
 void WalletStack::encryptWallet(bool status)
 {
     WalletView *walletView = (WalletView*)currentWidget();

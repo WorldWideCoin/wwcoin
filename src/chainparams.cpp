@@ -55,15 +55,15 @@ public:
         //// debug print
         hashGenesisBlock = genesis.GetHash();
 
-        while (hashGenesisBlock > bnGenesisProofOfWorkLimit.getuint256()){
-            if (++genesis.nNonce==0) break;
-            hashGenesisBlock = genesis.GetHash();
-        }
+  //      while (hashGenesisBlock > bnGenesisProofOfWorkLimit.getuint256()){
+   //         if (++genesis.nNonce==0) break;
+   //         hashGenesisBlock = genesis.GetHash();
+   //     }
 
-        printf("%s\n", hashGenesisBlock.ToString().c_str());
-        printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-        printf("%x\n", bnGenesisProofOfWorkLimit.GetCompact());
-        genesis.print();
+  //      printf("%s\n", hashGenesisBlock.ToString().c_str());
+  //      printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+  //      printf("%x\n", bnGenesisProofOfWorkLimit.GetCompact());
+  //      genesis.print();
 
 
         assert(hashGenesisBlock == uint256("0x0000005471bdee268c9cbe5305e48628fadcf9ca37cb082f6a596023613ec5a6"));
